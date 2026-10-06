@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedQueue - Hospital Emergency Queue</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✚</div>
+
+            <div>
+                <strong>MedQueue</strong>
+                <span>Hospital Management</span>
+            </div>
+        </div>
+
+        <div class="project-pill">
+            DSA PROJECT<br>
+            <b>Multiple Data Structures</b>
+        </div>
+
+        <nav>
+
+            <button class="nav-item active" data-page="dashboard">
+                🏠
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-page="register">
+                👤
+                <span>Register Patient</span>
+            </button>
+
+            <button class="nav-item" data-page="emergency">
+                🚨
+                <span>Emergency Queue</span>
+            </button>
+
+            <button class="nav-item" data-page="waiting">
+                📋
+                <span>Waiting Queue</span>
+            </button>
+
+            <button class="nav-item" data-page="history">
+                🕘
+                <span>Treatment History</span>
+            </button>
+
+            <button class="nav-item" data-page="search">
+                🔍
+                <span>Search Patient</span>
+            </button>
+
+        </nav>
+
+        <div class="server-box">
+            <div class="dot"></div>
+
+            <div>
+                <b>C Server</b>
+                <small id="serverStatus">Online</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+                <div>
+                    <div class="eyebrow">MEDQUEUE</div>
+                    <h1>Hospital Emergency System</h1>
+                </div>
+
+            </div>
+
+            <div class="top-date" id="dateDisplay"></div>
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- DASHBOARD -->
+        <!-- ================================================= -->
+
+        <section class="page active" id="dashboard">
+
+            <div class="hero">
+
+                <div>
+
+                    <div class="eyebrow light">
+                        EMERGENCY MANAGEMENT
+                    </div>
+
+                    <h2>
+                        Hospital Emergency<br>
+                        Queue Management
+                    </h2>
+
+                    <p>
+                        Manage patients efficiently using multiple
+                        data structures.
+                    </p>
+
+                </div>
+
+                <div class="hero-cross">
+                    ✚
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-icon blue">
+                        👥
+                    </div>
+
+                    <div>
+                        <strong id="totalPatients">0</strong>
+                        <span>Total Patients</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon red">
+                        🚨
+                    </div>
+
+                    <div>
+                        <strong id="criticalPatients">0</strong>
+                        <span>Critical Patients</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon orange">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <strong id="waitingPatients">0</strong>
+                        <span>Waiting Patients</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong id="treatedPatients">0</strong>
+                        <span>Treated Patients</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TWO COLUMNS -->
+
+            <div class="grid-two">
+
+                <!-- NEXT PATIENT -->
+
+                <div class="card">
+
+                    <div class="card-head">
+
+                        <div>
+                            <h3>Next Emergency Patient</h3>
+
+                            <p>
+                                Highest priority patient
+                            </p>
+                        </div>
+
+                        <span class="badge critical">
+                            PRIORITY
+                        </span>
+
+                    </div>
+
+                    <div id="nextPatient">
+
+                        <div class="empty">
+                            No emergency patients waiting.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="primary full"
+                        id="treatEmergencyBtn">
+
+                        Treat Emergency Patient
+
+                    </button>
+
+                </div>
+
+
+                <!-- DATA STRUCTURES -->
+
+                <div class="card">
+
+                    <div class="card-head">
+
+                        <div>
+                            <h3>Data Structures</h3>
+
+                            <p>
+                                Used in this project
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ds-mini">
+
+                        <span>🚨 Priority Queue</span>
+
+                        <b>Emergency</b>
+
+                    </div>
+
+
+                    <div class="ds-mini">
+
+                        <span>📋 Queue</span>
+
+                        <b>Waiting</b>
+
+                    </div>
+
+
+                    <div class="ds-mini">
+
+                        <span>🔍 Hash Table</span>
+
+                        <b>Search</b>
+
+                    </div>
+
+
+                    <div class="ds-mini">
+
+                        <span>📚 Stack</span>
+
+                        <b>History</b>
+
+                    </div>
+
+
+                    <div class="ds-mini">
+
+                        <span>🔗 Linked List</span>
+
+                        <b>Records</b>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- REGISTER PATIENT -->
+        <!-- ================================================= -->
+
+        <section class="page" id="register">
+
+            <div class="section-title">
+
+                <div class="eyebrow">
+                    PATIENT MANAGEMENT
+                </div>
+
+                <h2>Register New Patient</h2>
+
+                <p>
+                    Add a patient to the hospital emergency system.
+                </p>
+
+            </div>
+
+
+            <div class="card form-card">
+
+                <form id="patientForm">
+
+                    <div class="form-grid">
+
+                        <div>
+
+                            <label>
+                                Patient ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="patientId"
+                                placeholder="Enter Patient ID"
+                                required>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Patient Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="patientName"
+                                placeholder="Enter full name"
+                                required>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="patientAge"
+                                placeholder="Age"
+                                min="0"
+                                max="120"
+                                required>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Gender
+                            </label>
+
+                            <select id="patientGender" required>
+
+                                <option value="">
+                                    Select Gender
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="wide">
+
+                            <label>
+                                Medical Problem / Symptoms
+                            </label>
+
+                            <textarea
+                                id="patientProblem"
+                                placeholder="Describe patient's symptoms..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Patient Type
+                            </label>
+
+                            <select id="patientType" required>
+
+                                <option value="">
+                                    Select Type
+                                </option>
+
+                                <option value="Emergency">
+                                    Emergency
+                                </option>
+
+                                <option value="Normal">
+                                    Normal
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Emergency Priority
+                            </label>
+
+                            <select id="patientPriority" required>
+
+                                <option value="4">
+                                    Normal
+                                </option>
+
+                                <option value="3">
+                                    Moderate
+                                </option>
+
+                                <option value="2">
+                                    Serious
+                                </option>
+
+                                <option value="1">
+                                    Critical
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary">
+
+                        + Register Patient
+
+                    </button>
+
+
+                    <div id="formMsg"></div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- EMERGENCY QUEUE -->
+        <!-- ================================================= -->
+
+        <section class="page" id="emergency">
+
+            <div class="section-title">
+
+                <div class="eyebrow">
+                    PRIORITY QUEUE
+                </div>
+
+                <h2>Emergency Queue</h2>
+
+                <p>
+                    Patients are arranged according to emergency priority.
+                </p>
+
+            </div>
+
+
+            <div class="card table-card">
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Patient</th>
+                                <th>Age</th>
+                                <th>Problem</th>
+                                <th>Priority</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="emergencyTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- WAITING QUEUE -->
+        <!-- ================================================= -->
+
+        <section class="page" id="waiting">
+
+            <div class="section-title">
+
+                <div class="eyebrow">
+                    FIFO QUEUE
+                </div>
+
+                <h2>General Waiting Queue</h2>
+
+                <p>
+                    Normal patients are treated in arrival order.
+                </p>
+
+            </div>
+
+
+            <div class="card table-card">
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Patient</th>
+                                <th>Age</th>
+                                <th>Problem</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="waitingTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- HISTORY -->
+        <!-- ================================================= -->
+
+        <section class="page" id="history">
+
+            <div class="section-title">
+
+                <div class="eyebrow">
+                    TREATMENT RECORDS
+                </div>
+
+                <h2>Treatment History</h2>
+
+                <p>
+                    Recently treated patients are stored using stack logic.
+                </p>
+
+            </div>
+
+
+            <div
+                class="history-grid"
+                id="historyGrid">
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- SEARCH -->
+        <!-- ================================================= -->
+
+        <section class="page" id="search">
+
+            <div class="section-title">
+
+                <div class="eyebrow">
+                    HASH TABLE
+                </div>
+
+                <h2>Search Patient</h2>
+
+                <p>
+                    Search patients quickly using Patient ID.
+                </p>
+
+            </div>
+
+
+            <div class="card search-card">
+
+                <div class="search-row">
+
+                    <input
+                        type="text"
+                        id="searchId"
+                        placeholder="Enter Patient ID">
+
+                    <button
+                        class="primary"
+                        id="searchBtn">
+
+                        🔍 Search
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="search-result"
+                    id="searchResult">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            MedQueue © 2026 |
+            Hospital Emergency Queue Management System |
+            DSA Project
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
